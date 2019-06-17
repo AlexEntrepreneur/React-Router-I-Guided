@@ -304,3 +304,7 @@ input {
 input:focus + .baseline:before {
   right: 0;
 }
+
+.some-link {
+  text-decoration: none;
+}

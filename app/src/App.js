@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import Home from './components/Home';
 
 import data from './data';
 
@@ -19,11 +20,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <nav>
-          <h1 className="store-header">Trinkets</h1>
+          <Link className="some-link" to="/">
+            <h1 className="store-header">Trinkets</h1>
+          </Link>
           <div className="nav-links" />
+
         </nav>
 
-        <Route path="/" component={}/>
+        <Route exact path="/" component={Home} />
       </div>
     );
   }
