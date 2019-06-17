@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 import data from './data';
 
@@ -21,6 +22,8 @@ class App extends React.Component {
           <h1 className="store-header">Trinkets</h1>
           <div className="nav-links" />
         </nav>
+
+        <Route path="/" component={}/>
       </div>
     );
   }
