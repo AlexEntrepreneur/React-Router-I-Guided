@@ -3,7 +3,7 @@ import React from 'react';
 import items from '../data';
 
 function Item(props) {
-    const item = items.find(thing => `${thing.id}` === props.match.params.id);
+    const item = items.find(item => item.id.toString() === props.match.params.id);
     console.log(item);
 
     return (
