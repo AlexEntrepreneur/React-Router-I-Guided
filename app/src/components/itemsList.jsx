@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import items from '../data';
+import data from '../data';
 
 function ItemsList() {
-  return (
-    <div className="items-list-wrapper">
-      {items.map(item => (
-        <Link className="some-link" to={`/item-list/${item.id}`} key={item.id}>
-          <div className="item-card">
-            <img
-              className="item-list-image"
-              src={item.imageUrl}
-              alt={item.name}
-            />
-            <p>{item.name}</p>
-            <p>${item.price}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
+	const [items, setItems] = useState([]);
+
+	useEffect(() => {
+    // An API request could go here
+    setItems(data);
+	}, []);
+
+	return (
+		<div className="items-list-wrapper">
+			{items.map(item => (
+				<Link
+					className="some-link"
+					to={{
+            pathname: `/item-list/${item.id}`,
+            state: { item }
+          }}
+					key={item.id}
+				>
+					<div className="item-card">
+						<img
+							className="item-list-image"
+							src={item.imageUrl}
+							alt={item.name}
+						/>
+						<p>{item.name}</p>
+						<p>${item.price}</p>
+					</div>
+				</Link>
+			))}
+		</div>
+	);
 }
 
 export default ItemsList;
