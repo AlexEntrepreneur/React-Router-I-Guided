@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Home from './components/Home';
 import ItemsList from "./components/ItemsList";
 import Item from './components/Item';
@@ -8,11 +8,13 @@ function App() {
 	return (
 		<div className="App">
 			<nav>
-				<h1 className="store-header">Trinkets</h1>
+        <Link to="/">
+				  <h1 className="store-header">Trinkets</h1>
+        </Link>
         <div className="nav-links">
-          <a href="#">
-            Shop
-          </a>
+        <Link to="/items-list">
+          Shop
+        </Link>
         </div>
 			</nav>
       <Switch>
@@ -22,7 +24,7 @@ function App() {
         <Route exact path="/items-list">
           <ItemsList/>
         </Route>
-        <Route path="/items-list/item">
+        <Route path="/items-list/:itemId">
           <Item />
         </Route>
       </Switch>

@@ -1,9 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 function Item() {
-  const item = {}
+  const item = {};
+  const { itemId } = useParams();
 	return (
 		<div className="item-wrapper">
+    <h1>My Param: {itemId}</h1>
 			<div className="item-header">
 				<div className="image-wrapper">
 					<img src={item.imageUrl} alt={item.name} />
