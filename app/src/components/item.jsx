@@ -1,11 +1,16 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 // import items from '../data';
 
-function Item(props) {
+function Item() {
 	// const item = items.find(item => item.id.toString() === props.match.params.id);
+  
   // receiving item through through Link location state
-  const item = props.location.state.item;
+  const { state } = useLocation();
+  const item = state.item;
+
+  // In reality we may do another axios request for the single item in a useEffect
 
 	return (
 		<div className="item-wrapper">
