@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Item() {
+  const item = {}
 	return (
 		<div className="item-wrapper">
 			<div className="item-header">

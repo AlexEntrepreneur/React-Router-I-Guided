@@ -2,7 +2,8 @@ import React from 'react';
 
 function ItemsList() {
 	return (
-		<div className="items-list-wrapper">
+    <div className="items-list-wrapper">
+    <h1>Hello from ItemsList</h1>
 			{[].map(item => (
 					<div className="item-card">
 						<img

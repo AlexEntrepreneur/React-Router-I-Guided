@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
+import ItemsList from "./components/ItemsList";
+import Item from './components/Item';
 
 function App() {
 	return (
@@ -14,10 +16,15 @@ function App() {
         </div>
 			</nav>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
         </Route>
-        {/* path = '/items-list', ItemList */}
+        <Route path="/items-list">
+          <ItemsList/>
+        </Route>
+        <Route path="/items-list/item">
+          <Item />
+        </Route>
       </Switch>
 		</div>
 	);
