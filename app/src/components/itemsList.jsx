@@ -7,7 +7,7 @@ function ItemsList() {
 	const [items, setItems] = useState([]);
 
 	useEffect(() => {
-    // An API request could go here
+    // An API request could go here to request a list of the items
     setItems(data);
 	}, []);
 
