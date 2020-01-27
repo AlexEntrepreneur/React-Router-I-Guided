@@ -1,14 +1,15 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
-// import items from '../data';
+import items from '../data';
 
 function Item() {
-	// const item = items.find(item => item.id.toString() === props.match.params.id);
+  const { itemId } = useParams();
+	const item = items.find(item => item.id.toString() === itemId);
   
   // receiving item through through Link location state
-  const { state } = useLocation();
-  const item = state.item;
+  // const { state } = useLocation();
+  // const item = state.item;
 
   // In reality we may do another axios request for the single item in a useEffect
 

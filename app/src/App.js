@@ -25,10 +25,10 @@ function App() {
         <Route exact path="/item-list">
           <ItemsList />
         </Route>
-        <Route path="/item-list/:id">
+        <Route path="/item-list/:itemId">
           <Item />
         </Route>
-        <Route path="/test/:id">
+        <Route path="/test/:banana">
           <TestRouteParams />
         </Route>
       </Switch>

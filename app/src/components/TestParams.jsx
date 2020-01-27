@@ -2,10 +2,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 
 function TestRouteParams() {
-  const { id } = useParams();
+  const { banana } = useParams();
   return(
-    // Uncomment the h1 when to test that you success
-    <h1>You entered a param of "{id}" in the URL</h1>
+    // Create a new `Route` with a path to `/test/:<yourparam>`
+    // Use the `useParams` hook to get the value of your new URL param
+    // Interpolate the value of your new URL param to test it
+    <h1>You entered a param of "{banana}" in the URL</h1>
   );
 }
 
