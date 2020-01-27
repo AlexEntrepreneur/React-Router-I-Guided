@@ -1,9 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+import data from '../data';
+
 function Item() {
-  const item = {};
   const { itemId } = useParams();
+  const item = data.find(item => item.id.toString() === itemId);
+
+  // In reality we would have another axios request for the individual item data
+
 	return (
 		<div className="item-wrapper">
       <h1>My Param: {itemId}</h1>

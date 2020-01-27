@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import Home from './components/Home';
 import ItemsList from "./components/ItemsList";
 import Item from './components/Item';
+import TestParams from "./components/TestParams";
 
 function App() {
 	return (
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/items-list/:itemId">
           <Item />
+        </Route>
+        <Route path="/test/:name">
+          <TestParams />
         </Route>
       </Switch>
 		</div>
